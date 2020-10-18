@@ -1,0 +1,2448 @@
+.App { /* Base font style */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 19.9px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: rgba(0, 0, 0, 0.8500);
+  background-color: #f6f6f6;
+}
+
+.App .baseFont * { /* Base font style override for UI framework components */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 19.9px;
+}
+
+.App .appBg {
+  background-color: #f6f6f6;
+}
+
+.App .cardBg {
+  background-color: white;
+}
+
+.App .baseTextBg { /* Base text color as background */
+  background-color: rgba(0, 0, 0, 0.8500);
+}
+
+.App .secondaryTextColor {
+  color: rgba(0, 0, 0, 0.5000);
+}
+
+.App .secondaryTextBg {
+  background-color: rgba(0, 0, 0, 0.5000);
+}
+
+.App .primaryTextColor {
+  color: #76f0dc;
+}
+
+.App .primaryBg {
+  background-color: #76f0dc;
+}
+
+.App .highlightTextColor {
+  color: #0093d5;
+}
+
+.App .highlightBg {
+  background-color: #0093d5;
+}
+
+@media (display-mode: standalone) {
+  .App {
+    user-select: none;
+  }
+}
+
+/* Styles to customize the UI framework plugin (MUI, https://muicss.com) */
+.mui-btn {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.mui-btn--primary {
+    background-color: #76f0dc;
+}
+.mui-btn--primary:active, .mui-btn--primary:focus, .mui-btn--primary:hover {
+    background-color: #7fefdf;
+}
+.mui-btn--accent {
+    background-color: #0093d5;
+}
+.mui-btn--accent:active, .mui-btn--accent:focus, .mui-btn--accent:hover {
+    background-color: #069fda;
+}
+.mui-textfield {  /* Reset UI framework styling that affects layout */
+    padding-top: 0;
+    margin-bottom: 0;
+}
+.mui-checkbox, .mui-radio {  /* Reset UI framework styling that affects layout */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.mui-select {  /* Reset UI framework styling that affects layout */
+    padding-top: 0;
+    margin-bottom: 0;
+}
+.mui-btn+.mui-btn {  /* Reset UI framework styling that affects layout */
+    margin-left: 0;
+}
+.mui-btn--fab {  /* Reset UI framework styling that breaks compositing */
+    z-index: auto;
+}
+
+@keyframes fadeIn {
+    0%   { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+@keyframes slideIn_right {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+}
+@keyframes slideIn_bottom {
+    0%   { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+
+/* System font classes */
+
+.App .systemFontRegular {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+}
+.App .systemFontBold {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: 600;
+}
+.App .systemFontItalic {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-style: italic;
+}
+.App .systemFontBoldItalic {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* App-wide text styles specified in React Studio */
+
+.App .actionFont {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 14.2px;
+  font-weight: 400;
+}
+.App .actionFont * {
+  font-size: 14.2px;
+}
+.App .headlineFont {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 19.0px;
+  font-weight: 600;
+}
+.App .headlineFont * {
+  font-size: 19.0px;
+}
+.App .navBar {
+  background-color: #76f0dc;
+  color: #fefffe;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  min-height: 50px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 18px;
+}
+
+.App .navBar a {
+  color: #fefffe;
+}
+
+.App .navBar .title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  padding: 4px;
+}
+
+.App .navBar .backBtn {
+  position: absolute;
+  padding: 4px;
+  margin-left: 14px;
+  cursor: pointer;
+}
+
+.App .navBar > div {
+  margin-top: 7px;
+}
+
+@media (min-width: 568px) {
+  .App .navBar {
+    height: 50px;
+    min-height: 50px;
+  }
+  .App .navBar > div {
+    margin-top: 7px;
+  }
+}
+@media (min-width: 768px) {
+  .App .navBar {
+    height: 50px;
+    min-height: 50px;
+  }
+  .App .navBar > div {
+    margin-top: 7px;
+  }
+}
+@media (min-width: 1024px) {
+  .App .navBar {
+    height: 50px;
+    min-height: 50px;
+  }
+  .App .navBar > div {
+    margin-top: 7px;
+  }
+}
+@media (min-width: 320px) {
+  .mui-container {
+    max-width: 320px;
+  }
+}
+@media (min-width: 568px) {
+  .mui-container {
+    max-width: 568px;
+  }
+}
+@media (min-width: 768px) {
+  .mui-container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .mui-container {
+    max-width: 1024px;
+  }
+}
+
+.AppScreen {
+  padding-left: 0;
+  padding-right: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+}
+
+.App .background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.App .layoutFlow {
+  position: relative;
+  width: 100%;
+  pointer-events: none;
+}
+.App .layoutFlow:before {  /* Prevent margin collapse */
+  content: "";
+  display: table;
+  clear: both;
+}
+.App .layoutFlow .flowRow {
+  position: relative;
+  width: 100%;
+}
+
+.App .screenFgContainer {
+  /* Items in the foreground group within a screen are placed with fixed positioning */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.App .foreground {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.App ul {
+  margin: 0;
+  padding: 0;
+}
+.App li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+}
+.App .hasNestedComps {
+  position: relative;
+}
+.App .hasNestedComps:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.App .hasNestedComps .background {
+  position: absolute;
+}
+.App .hasNestedComps .layoutFlow {
+  position: relative;
+}
+.App .bottomAlignedContent {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.App .blockInputOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: auto;
+  z-index: 99999999;
+}
+
+.App .marker {
+  width: 0px;
+  height: 0px;
+}
+
+.App .drawer {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.App .drawerOpen {
+  transform: translateX(0%);
+  transition: 0.3s;
+}
+
+.App .drawerClosedLeft {
+  transform: translateX(-100%);
+  transition: 0.3s;
+}
+
+.App .drawerClosedRight {
+  transform: translateX(100%);
+  transition: 0.3s;
+}
+
+.App .drawerContent {
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
+}
+
+.App .drawerContent > * {
+  height: 100%;
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ShieldOnScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .ShieldOnScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .ShieldOnScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .ShieldOnScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ShieldOnScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 168px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .ShieldOnScreen > .layoutFlow > .elText > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .ShieldOnScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 168px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .ShieldOnScreen > .layoutFlow > .elText > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ShieldOnScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 167px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .ShieldOnScreen > .layoutFlow > .elText > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ShieldOnScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 167px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .ShieldOnScreen > .layoutFlow > .elText > * { 
+    width: 100%;
+  }
+  
+}
+
+.ConfirmationPageScreen .elTrend svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elTrend {
+    position: absolute;
+    margin-top: 156px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: calc(100.0% - 10px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elTrend > * { 
+    width: 100%;
+  height: 78px;
+  }
+  
+  .flowRow_ConfirmationPageScreen_elTrend_689361 { 
+  }
+  
+@media (min-width: 568px) {
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elTrend {
+    position: absolute;
+    margin-top: 156px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: calc(100.0% - 10px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elTrend > * { 
+    width: 100%;
+  height: 140px;
+  }
+  
+  .flowRow_ConfirmationPageScreen_elTrend_689361 { 
+  }
+  
+}
+@media (min-width: 768px) {
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elTrend {
+    position: absolute;
+    margin-top: 155px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: calc(100.0% - 10px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elTrend > * { 
+    width: 100%;
+  height: 190px;
+  }
+  
+  .flowRow_ConfirmationPageScreen_elTrend_689361 { 
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elTrend {
+    position: absolute;
+    margin-top: 155px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: calc(100.0% - 10px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elTrend > * { 
+    width: 100%;
+  height: 254px;
+  }
+  
+  .flowRow_ConfirmationPageScreen_elTrend_689361 { 
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elText {
+    position: absolute;
+    top: 58px;
+    margin-left: 4px;
+    margin-right: 5px;
+    width: calc(100.0% - 10px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elText > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elText {
+    position: absolute;
+    top: 58px;
+    margin-left: 4px;
+    margin-right: 5px;
+    width: calc(100.0% - 10px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elText > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elText {
+    position: absolute;
+    top: 58px;
+    margin-left: 4px;
+    margin-right: 5px;
+    width: calc(100.0% - 10px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elText > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elText {
+    position: absolute;
+    top: 58px;
+    margin-left: 4px;
+    margin-right: 5px;
+    width: calc(100.0% - 10px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elText > * { 
+    width: 100%;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ConfirmationPageScreen > .layoutFlow > .elCard {
+    position: relative;
+    margin-top: 425px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .elCard > * { 
+    width: 100%;
+  height: 204px;
+  }
+  
+@media (min-width: 568px) {
+  .ConfirmationPageScreen > .layoutFlow > .elCard {
+    position: relative;
+    margin-top: 425px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .elCard > * { 
+    width: 100%;
+  height: 204px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ConfirmationPageScreen > .layoutFlow > .elCard {
+    position: relative;
+    margin-top: 422px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .elCard > * { 
+    width: 100%;
+  height: 203px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ConfirmationPageScreen > .layoutFlow > .elCard {
+    position: relative;
+    margin-top: 422px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .elCard > * { 
+    width: 100%;
+  height: 203px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elText2 {
+    position: absolute;
+    margin-top: -181px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elText2 > * { 
+    width: 100%;
+  }
+  
+  .flowRow_ConfirmationPageScreen_elText2_395040 { 
+  }
+  
+@media (min-width: 568px) {
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elText2 {
+    position: absolute;
+    margin-top: -181px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elText2 > * { 
+    width: 100%;
+  }
+  
+  .flowRow_ConfirmationPageScreen_elText2_395040 { 
+  }
+  
+}
+@media (min-width: 768px) {
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elText2 {
+    position: absolute;
+    margin-top: -180px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elText2 > * { 
+    width: 100%;
+  }
+  
+  .flowRow_ConfirmationPageScreen_elText2_395040 { 
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elText2 {
+    position: absolute;
+    margin-top: -180px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .flowRow > .elText2 > * { 
+    width: 100%;
+  }
+  
+  .flowRow_ConfirmationPageScreen_elText2_395040 { 
+  }
+  
+}
+
+.ConfirmationPageScreen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.ConfirmationPageScreen .elButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .ConfirmationPageScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 74px;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100.0% - 160px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .elButton > * { 
+    width: 100%;
+  height: 35px;
+  }
+  
+@media (min-width: 568px) {
+  .ConfirmationPageScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 74px;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100.0% - 160px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .elButton > * { 
+    width: 100%;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ConfirmationPageScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 73px;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100.0% - 159px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .elButton > * { 
+    width: 100%;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ConfirmationPageScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 73px;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100.0% - 159px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .elButton > * { 
+    width: 100%;
+  height: 35px;
+  }
+  
+}
+
+.ConfirmationPageScreen .elButtonCopy button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.ConfirmationPageScreen .elButtonCopy button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .ConfirmationPageScreen > .layoutFlow > .elButtonCopy {
+    line-height: 35px;
+    position: relative;
+    margin-top: 14px;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100.0% - 160px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .elButtonCopy > * { 
+    width: 100%;
+  height: 35px;
+  }
+  
+@media (min-width: 568px) {
+  .ConfirmationPageScreen > .layoutFlow > .elButtonCopy {
+    line-height: 35px;
+    position: relative;
+    margin-top: 14px;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100.0% - 160px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .elButtonCopy > * { 
+    width: 100%;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ConfirmationPageScreen > .layoutFlow > .elButtonCopy {
+    line-height: 35px;
+    position: relative;
+    margin-top: 14px;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100.0% - 159px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .elButtonCopy > * { 
+    width: 100%;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ConfirmationPageScreen > .layoutFlow > .elButtonCopy {
+    line-height: 35px;
+    position: relative;
+    margin-top: 14px;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100.0% - 159px);
+  }
+  .ConfirmationPageScreen > .layoutFlow > .elButtonCopy > * { 
+    width: 100%;
+  height: 35px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AdaptiveShieldSetupScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .AdaptiveShieldSetupScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .AdaptiveShieldSetupScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .AdaptiveShieldSetupScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 63px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elText > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 63px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elText > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 62px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elText > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 62px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elText > * { 
+    width: 100%;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckbox {
+    position: relative;
+    margin-top: 34px;
+    margin-left: 15px;
+    margin-right: 180px;
+    width: calc(100.0% - 195px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckbox > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckbox {
+    position: relative;
+    margin-top: 34px;
+    margin-left: 15px;
+    margin-right: 180px;
+    width: calc(100.0% - 195px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckbox > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckbox {
+    position: relative;
+    margin-top: 34px;
+    margin-left: 15px;
+    margin-right: 179px;
+    width: calc(100.0% - 194px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckbox > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckbox {
+    position: relative;
+    margin-top: 34px;
+    margin-left: 15px;
+    margin-right: 179px;
+    width: calc(100.0% - 194px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckbox > * { 
+    width: 100%;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckboxCopy {
+    position: relative;
+    margin-top: 25px;
+    margin-left: 15px;
+    margin-right: 180px;
+    width: calc(100.0% - 195px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckboxCopy > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckboxCopy {
+    position: relative;
+    margin-top: 25px;
+    margin-left: 15px;
+    margin-right: 180px;
+    width: calc(100.0% - 195px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckboxCopy > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckboxCopy {
+    position: relative;
+    margin-top: 25px;
+    margin-left: 15px;
+    margin-right: 179px;
+    width: calc(100.0% - 194px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckboxCopy > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckboxCopy {
+    position: relative;
+    margin-top: 25px;
+    margin-left: 15px;
+    margin-right: 179px;
+    width: calc(100.0% - 194px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckboxCopy > * { 
+    width: 100%;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elText3 {
+    position: absolute;
+    margin-top: 132px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elText3 > * { 
+    width: 100%;
+  }
+  
+  .flowRow_AdaptiveShieldSetupScreen_elText3_388283 { 
+  }
+  
+@media (min-width: 568px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elText3 {
+    position: absolute;
+    margin-top: 131px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elText3 > * { 
+    width: 100%;
+  }
+  
+  .flowRow_AdaptiveShieldSetupScreen_elText3_388283 { 
+  }
+  
+}
+@media (min-width: 768px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elText3 {
+    position: absolute;
+    margin-top: 130px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elText3 > * { 
+    width: 100%;
+  }
+  
+  .flowRow_AdaptiveShieldSetupScreen_elText3_388283 { 
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elText3 {
+    position: absolute;
+    margin-top: 130px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elText3 > * { 
+    width: 100%;
+  }
+  
+  .flowRow_AdaptiveShieldSetupScreen_elText3_388283 { 
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elEmbed {
+    position: absolute;
+    top: -41px;
+    margin-left: 200px;
+    margin-right: -57px;
+    width: calc(100.0% - 143px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elEmbed > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elEmbed {
+    position: absolute;
+    top: -41px;
+    margin-left: 200px;
+    margin-right: -57px;
+    width: calc(100.0% - 143px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elEmbed > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elEmbed {
+    position: absolute;
+    top: -40px;
+    margin-left: 199px;
+    margin-right: -57px;
+    width: calc(100.0% - 142px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elEmbed > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elEmbed {
+    position: absolute;
+    top: -40px;
+    margin-left: 199px;
+    margin-right: -57px;
+    width: calc(100.0% - 142px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elEmbed > * { 
+    width: 100%;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckboxCopy2 {
+    position: relative;
+    margin-top: 28px;
+    margin-left: 15px;
+    margin-right: 180px;
+    width: calc(100.0% - 195px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckboxCopy2 > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckboxCopy2 {
+    position: relative;
+    margin-top: 28px;
+    margin-left: 15px;
+    margin-right: 180px;
+    width: calc(100.0% - 195px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckboxCopy2 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckboxCopy2 {
+    position: relative;
+    margin-top: 27px;
+    margin-left: 15px;
+    margin-right: 179px;
+    width: calc(100.0% - 194px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckboxCopy2 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckboxCopy2 {
+    position: relative;
+    margin-top: 27px;
+    margin-left: 15px;
+    margin-right: 179px;
+    width: calc(100.0% - 194px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elCheckboxCopy2 > * { 
+    width: 100%;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elText2 {
+    overflow: hidden;
+    position: absolute;
+    margin-top: -126px;
+    margin-left: 140px;
+    margin-right: -45px;
+    width: calc(100.0% - 96px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elText2 > * { 
+    width: 100%;
+  }
+  
+  .flowRow_AdaptiveShieldSetupScreen_elText2_448772 { 
+  }
+  
+@media (min-width: 568px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elText2 {
+    overflow: hidden;
+    position: absolute;
+    margin-top: -126px;
+    margin-left: 140px;
+    margin-right: -45px;
+    width: calc(100.0% - 96px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elText2 > * { 
+    width: 100%;
+  }
+  
+  .flowRow_AdaptiveShieldSetupScreen_elText2_448772 { 
+  }
+  
+}
+@media (min-width: 768px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elText2 {
+    overflow: hidden;
+    position: absolute;
+    margin-top: -124px;
+    margin-left: 140px;
+    margin-right: -45px;
+    width: calc(100.0% - 95px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elText2 > * { 
+    width: 100%;
+  }
+  
+  .flowRow_AdaptiveShieldSetupScreen_elText2_448772 { 
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elText2 {
+    overflow: hidden;
+    position: absolute;
+    margin-top: -124px;
+    margin-left: 140px;
+    margin-right: -45px;
+    width: calc(100.0% - 95px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .flowRow > .elText2 > * { 
+    width: 100%;
+  }
+  
+  .flowRow_AdaptiveShieldSetupScreen_elText2_448772 { 
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elText4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 170px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elText4 > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elText4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 170px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elText4 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elText4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 169px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elText4 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elText4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 169px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elText4 > * { 
+    width: 100%;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 22px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elTextCopy > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 22px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elTextCopy > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 22px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elTextCopy > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 22px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100.0% - 40px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elTextCopy > * { 
+    width: 100%;
+  }
+  
+}
+
+.AdaptiveShieldSetupScreen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.AdaptiveShieldSetupScreen .elButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100.0% - 160px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elButton > * { 
+    width: 100%;
+  height: 35px;
+  }
+  
+@media (min-width: 568px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100.0% - 160px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elButton > * { 
+    width: 100%;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100.0% - 159px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elButton > * { 
+    width: 100%;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100.0% - 159px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elButton > * { 
+    width: 100%;
+  height: 35px;
+  }
+  
+}
+
+.AdaptiveShieldSetupScreen .elButtonCopy button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.AdaptiveShieldSetupScreen .elButtonCopy button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elButtonCopy {
+    line-height: 35px;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100.0% - 160px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elButtonCopy > * { 
+    width: 100%;
+  height: 35px;
+  }
+  
+@media (min-width: 568px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elButtonCopy {
+    line-height: 35px;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100.0% - 160px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elButtonCopy > * { 
+    width: 100%;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elButtonCopy {
+    line-height: 35px;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100.0% - 159px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elButtonCopy > * { 
+    width: 100%;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elButtonCopy {
+    line-height: 35px;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100.0% - 159px);
+  }
+  .AdaptiveShieldSetupScreen > .layoutFlow > .elButtonCopy > * { 
+    width: 100%;
+  height: 35px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AccountSummaryScreen > .background > .state0_elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .AccountSummaryScreen > .background > .state0_elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .AccountSummaryScreen > .background > .state0_elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .AccountSummaryScreen > .background > .state0_elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AccountSummaryScreen > .layoutFlow > .state0_elText {
+    position: relative;
+    margin-top: 82px;
+    margin-left: 30px;
+    margin-right: 30px;
+    width: calc(100.0% - 60px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elText > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elText {
+    position: relative;
+    margin-top: 82px;
+    margin-left: 30px;
+    margin-right: 30px;
+    width: calc(100.0% - 60px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elText > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elText {
+    position: relative;
+    margin-top: 81px;
+    margin-left: 30px;
+    margin-right: 30px;
+    width: calc(100.0% - 60px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elText > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elText {
+    position: relative;
+    margin-top: 81px;
+    margin-left: 30px;
+    margin-right: 30px;
+    width: calc(100.0% - 60px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elText > * { 
+    width: 100%;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AccountSummaryScreen > .layoutFlow > .state0_elText2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 42px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elText2 > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elText2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 42px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elText2 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elText2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 42px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elText2 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elText2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 42px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elText2 > * { 
+    width: 100%;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy > * { 
+    width: 100%;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy2 > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy2 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy2 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy2 > * { 
+    width: 100%;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy3 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy3 > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy3 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy3 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy3 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy3 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy3 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy3 > * { 
+    width: 100%;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AccountSummaryScreen > .layoutFlow > .state0_elEmbed935675 {
+    position: relative;
+    margin-top: 26px;
+    margin-left: 148px;
+    margin-right: 20px;
+    width: calc(100.0% - 168px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elEmbed935675 > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elEmbed935675 {
+    position: relative;
+    margin-top: 26px;
+    margin-left: 148px;
+    margin-right: 20px;
+    width: calc(100.0% - 168px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elEmbed935675 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elEmbed935675 {
+    position: relative;
+    margin-top: 26px;
+    margin-left: 146px;
+    margin-right: 20px;
+    width: calc(100.0% - 166px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elEmbed935675 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elEmbed935675 {
+    position: relative;
+    margin-top: 26px;
+    margin-left: 146px;
+    margin-right: 20px;
+    width: calc(100.0% - 166px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elEmbed935675 > * { 
+    width: 100%;
+  }
+  
+}
+
+.AccountSummaryScreen .state0_elHotspot736801 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .AccountSummaryScreen > .layoutFlow > .state0_elHotspot736801 {
+    position: relative;
+    margin-top: -58px;
+    margin-left: 192px;
+    margin-right: 0px;
+    width: calc(100.0% - 192px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elHotspot736801 > * { 
+    width: 100%;
+  height: 56px;
+  }
+  
+@media (min-width: 568px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elHotspot736801 {
+    position: relative;
+    margin-top: -58px;
+    margin-left: 192px;
+    margin-right: 0px;
+    width: calc(100.0% - 192px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elHotspot736801 > * { 
+    width: 100%;
+  height: 56px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elHotspot736801 {
+    position: relative;
+    margin-top: -57px;
+    margin-left: 191px;
+    margin-right: 0px;
+    width: calc(100.0% - 191px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elHotspot736801 > * { 
+    width: 100%;
+  height: 55px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elHotspot736801 {
+    position: relative;
+    margin-top: -57px;
+    margin-left: 191px;
+    margin-right: 0px;
+    width: calc(100.0% - 191px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elHotspot736801 > * { 
+    width: 100%;
+  height: 55px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 34px;
+    margin-left: 14px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy4 > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 34px;
+    margin-left: 14px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy4 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 34px;
+    margin-left: 14px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy4 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 34px;
+    margin-left: 14px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy4 > * { 
+    width: 100%;
+  }
+  
+}
+
+.AccountSummaryScreen .state0_elTrend svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AccountSummaryScreen > .layoutFlow > .state0_elTrend {
+    position: relative;
+    margin-top: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTrend > * { 
+    width: 100%;
+  height: 75px;
+  }
+  
+@media (min-width: 568px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTrend {
+    position: relative;
+    margin-top: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTrend > * { 
+    width: 100%;
+  height: 137px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTrend {
+    position: relative;
+    margin-top: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTrend > * { 
+    width: 100%;
+  height: 187px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTrend {
+    position: relative;
+    margin-top: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTrend > * { 
+    width: 100%;
+  height: 251px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy5 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 59px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy5 > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy5 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 59px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy5 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy5 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 58px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy5 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy5 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 58px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100.0% - 30px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elTextCopy5 > * { 
+    width: 100%;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AccountSummaryScreen > .layoutFlow > .state0_elReactTable {
+    position: relative;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elReactTable > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elReactTable {
+    position: relative;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elReactTable > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elReactTable {
+    position: relative;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elReactTable > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AccountSummaryScreen > .layoutFlow > .state0_elReactTable {
+    position: relative;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state0_elReactTable > * { 
+    width: 100%;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AccountSummaryScreen > .layoutFlow > .state1_elEmbed935675 {
+    position: relative;
+    margin-top: 26px;
+    margin-left: 148px;
+    margin-right: 20px;
+    width: calc(100.0% - 168px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state1_elEmbed935675 > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AccountSummaryScreen > .layoutFlow > .state1_elEmbed935675 {
+    position: relative;
+    margin-top: 26px;
+    margin-left: 148px;
+    margin-right: 20px;
+    width: calc(100.0% - 168px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state1_elEmbed935675 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AccountSummaryScreen > .layoutFlow > .state1_elEmbed935675 {
+    position: relative;
+    margin-top: 26px;
+    margin-left: 146px;
+    margin-right: 20px;
+    width: calc(100.0% - 166px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state1_elEmbed935675 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AccountSummaryScreen > .layoutFlow > .state1_elEmbed935675 {
+    position: relative;
+    margin-top: 26px;
+    margin-left: 146px;
+    margin-right: 20px;
+    width: calc(100.0% - 166px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state1_elEmbed935675 > * { 
+    width: 100%;
+  }
+  
+}
+
+.AccountSummaryScreen .state1_elHotspot736801 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .AccountSummaryScreen > .layoutFlow > .state1_elHotspot736801 {
+    position: relative;
+    margin-top: -58px;
+    margin-left: 192px;
+    margin-right: 0px;
+    width: calc(100.0% - 192px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state1_elHotspot736801 > * { 
+    width: 100%;
+  height: 56px;
+  }
+  
+@media (min-width: 568px) {
+  .AccountSummaryScreen > .layoutFlow > .state1_elHotspot736801 {
+    position: relative;
+    margin-top: -58px;
+    margin-left: 192px;
+    margin-right: 0px;
+    width: calc(100.0% - 192px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state1_elHotspot736801 > * { 
+    width: 100%;
+  height: 56px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AccountSummaryScreen > .layoutFlow > .state1_elHotspot736801 {
+    position: relative;
+    margin-top: -57px;
+    margin-left: 191px;
+    margin-right: 0px;
+    width: calc(100.0% - 191px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state1_elHotspot736801 > * { 
+    width: 100%;
+  height: 55px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AccountSummaryScreen > .layoutFlow > .state1_elHotspot736801 {
+    position: relative;
+    margin-top: -57px;
+    margin-left: 191px;
+    margin-right: 0px;
+    width: calc(100.0% - 191px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state1_elHotspot736801 > * { 
+    width: 100%;
+  height: 55px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .AccountSummaryScreen > .layoutFlow > .state2_elEmbed935675 {
+    position: relative;
+    margin-top: 26px;
+    margin-left: 148px;
+    margin-right: 20px;
+    width: calc(100.0% - 168px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state2_elEmbed935675 > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .AccountSummaryScreen > .layoutFlow > .state2_elEmbed935675 {
+    position: relative;
+    margin-top: 26px;
+    margin-left: 148px;
+    margin-right: 20px;
+    width: calc(100.0% - 168px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state2_elEmbed935675 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AccountSummaryScreen > .layoutFlow > .state2_elEmbed935675 {
+    position: relative;
+    margin-top: 26px;
+    margin-left: 146px;
+    margin-right: 20px;
+    width: calc(100.0% - 166px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state2_elEmbed935675 > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AccountSummaryScreen > .layoutFlow > .state2_elEmbed935675 {
+    position: relative;
+    margin-top: 26px;
+    margin-left: 146px;
+    margin-right: 20px;
+    width: calc(100.0% - 166px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state2_elEmbed935675 > * { 
+    width: 100%;
+  }
+  
+}
+
+.AccountSummaryScreen .state2_elHotspot736801 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .AccountSummaryScreen > .layoutFlow > .state2_elHotspot736801 {
+    position: relative;
+    margin-top: -58px;
+    margin-left: 192px;
+    margin-right: 0px;
+    width: calc(100.0% - 192px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state2_elHotspot736801 > * { 
+    width: 100%;
+  height: 56px;
+  }
+  
+@media (min-width: 568px) {
+  .AccountSummaryScreen > .layoutFlow > .state2_elHotspot736801 {
+    position: relative;
+    margin-top: -58px;
+    margin-left: 192px;
+    margin-right: 0px;
+    width: calc(100.0% - 192px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state2_elHotspot736801 > * { 
+    width: 100%;
+  height: 56px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .AccountSummaryScreen > .layoutFlow > .state2_elHotspot736801 {
+    position: relative;
+    margin-top: -57px;
+    margin-left: 191px;
+    margin-right: 0px;
+    width: calc(100.0% - 191px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state2_elHotspot736801 > * { 
+    width: 100%;
+  height: 55px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .AccountSummaryScreen > .layoutFlow > .state2_elHotspot736801 {
+    position: relative;
+    margin-top: -57px;
+    margin-left: 191px;
+    margin-right: 0px;
+    width: calc(100.0% - 191px);
+  }
+  .AccountSummaryScreen > .layoutFlow > .state2_elHotspot736801 > * { 
+    width: 100%;
+  height: 55px;
+  }
+  
+}
+
