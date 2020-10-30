@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LocalizedStrings from 'react-localization';
 // eslint-disable-next-line
-import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
+import { Route, Switch, Redirect, withRouter, Router } from 'react-router-dom';
 // eslint-disable-next-line
 import * as util from 'util';
 import './App.css';
@@ -11,6 +11,10 @@ import AdaptiveShieldSetupScreen from './AdaptiveShieldSetupScreen.js';
 import AccountSummaryScreen from './AccountSummaryScreen.js';
 import DataSheet_localizationSheet from './DataSheet_localizationSheet.js';
 import DataSheet_stock from './DataSheet_stock.js';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import Amplify from 'aws-amplify';
+import awsconfig from './aws-exports'; // if you are using Amplify CLI
+Amplify.configure(awsconfig);
 
 
 class App extends Component {
@@ -66,7 +70,7 @@ class App extends Component {
 
   goBack = () => {
     // This method is the default implementation and could be customized by a navigation plugin.
-    this.props.history.goBack();
+    this.props.history.goBack(null);
   }
 
   getDataSheet = (sheetId) => {
@@ -169,6 +173,7 @@ class App extends Component {
           <Route path="/adaptiveShieldSetup" render={(props) => {
             return makeElementForScreen('adaptiveShieldSetup', props.location.state, true, true);
           }} />
+          
           <Route path="/accountSummary" render={(props) => {
             return makeElementForScreen('accountSummary', props.location.state, true, true);
           }} />
@@ -177,4 +182,6 @@ class App extends Component {
     );
   }
 }
-export default withRouter(App)
+export default withAuthenticator(App)
+
+

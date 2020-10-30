@@ -4,9 +4,17 @@ import Trend from 'react-trend';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import btn_icon_back_accountsummary from './images/btn_icon_back_accountsummary.png';
-
-// UI framework component imports
 import Appbar from 'muicss/lib/react/appbar';
+import { Auth } from 'aws-amplify';
+
+
+async function signOut() {
+    try {
+        await Auth.signOut({ global: true });
+    } catch (error) {
+        console.log('error signing out: ', error);
+    }
+}
 
 export default class AccountSummaryScreen extends Component {
 
@@ -33,8 +41,8 @@ export default class AccountSummaryScreen extends Component {
   
   onClick_state0_elHotspot736801 = (ev) => {
     // Go to screen 'Adaptive Shield Setup'
-    this.props.appActions.goToScreen('adaptiveShieldSetup', { transitionId: 'fadeIn' });
-  
+    this.props.appActions.goToScreen('AdaptiveShieldSetup', { transitionId: 'fadeIn' });
+
   }
   
   
@@ -213,7 +221,7 @@ export default class AccountSummaryScreen extends Component {
           </div>
         </div>
         <Appbar className="navBar">
-          <div className="title">Account Summary</div>  <div className="backBtn" onClick={ (ev)=>{ this.props.appActions.goBack() } }><img src={btn_icon_back_accountsummary} alt="" style={{width: '50%'}} /></div>
+          <div className="title">Account Summary</div>  <div className="backBtn" onClick={ (ev)=>{ signOut() } }><img src={btn_icon_back_accountsummary} alt="" style={{width: '50%'}} /></div>
         </Appbar>
         
       </div>
@@ -269,7 +277,7 @@ export default class AccountSummaryScreen extends Component {
           </div>
         </div>
         <Appbar className="navBar">
-          <div className="title">Account Summary</div>  <div className="backBtn" onClick={ (ev)=>{ this.props.appActions.goBack() } }><img src={btn_icon_back_accountsummary} alt="" style={{width: '50%'}} /></div>
+          <div className="title">Account Summary</div>  <div className="backBtn" onClick={ (ev)=>{ signOut() } }><img src={btn_icon_back_accountsummary} alt="" style={{width: '50%'}} /></div>
         </Appbar>
         
       </div>
@@ -325,7 +333,7 @@ export default class AccountSummaryScreen extends Component {
           </div>
         </div>
         <Appbar className="navBar">
-          <div className="title">Account Summary</div>  <div className="backBtn" onClick={ (ev)=>{ this.props.appActions.goBack() } }><img src={btn_icon_back_accountsummary} alt="" style={{width: '50%'}} /></div>
+          <div className="title">Account Summary</div>  <div className="backBtn" onClick={ (ev)=>{ signOut() } }><img src={btn_icon_back_accountsummary} alt="" style={{width: '50%'}} /></div>
         </Appbar>
         
       </div>
@@ -346,3 +354,4 @@ export default class AccountSummaryScreen extends Component {
   }
   
 }
+

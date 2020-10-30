@@ -3,14 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@aws-amplify/ui-react": "^0.2.24",
+    "aws-amplify": "^3.3.4",
+    "muicss": "^0.9.41",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-localization": "^1.0.13",
     "react-router-dom": "^5.1.2",
     "react-scripts": "2.1.8",
-    "muicss": "^0.9.41",
-    "react-trend": "^1.2.4",
-    "react-table": "^6.9.2"
+    "react-table": "^6.9.2",
+    "react-trend": "^1.2.4"
   },
   "scripts": {
     "start": "PORT=3000 react-scripts start",
