@@ -7,10 +7,16 @@ import btn_icon_back_adaptiveshieldsetup from './images/btn_icon_back_adaptivesh
 import Checkbox from 'muicss/lib/react/checkbox';
 import Button from 'muicss/lib/react/button';
 import Appbar from 'muicss/lib/react/appbar';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import Amplify from 'aws-amplify';
+import awsconfig from './aws-exports'; // if you are using Amplify CLI
+import { withRouter } from 'react-router-dom';
+Amplify.configure(awsconfig);
 
 
 
-export default class AdaptiveShieldSetupScreen extends Component {
+
+class AdaptiveShieldSetupScreen extends Component {
 
   // Properties used by this component:
   // appActions, deviceInfo
@@ -231,3 +237,4 @@ export default class AdaptiveShieldSetupScreen extends Component {
   }
   
 }
+export default withRouter(AdaptiveShieldSetupScreen)

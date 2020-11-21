@@ -1,26 +1,26 @@
 {
-    "dev": {
-        "awscloudformation": {
-            "AuthRoleName": "amplify-adaptivewebapp-dev-125747-authRole",
-            "UnauthRoleArn": "arn:aws:iam::100673254127:role/amplify-adaptivewebapp-dev-125747-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::100673254127:role/amplify-adaptivewebapp-dev-125747-authRole",
-            "Region": "us-east-1",
-            "DeploymentBucketName": "amplify-adaptivewebapp-dev-125747-deployment",
-            "UnauthRoleName": "amplify-adaptivewebapp-dev-125747-unauthRole",
-            "StackName": "amplify-adaptivewebapp-dev-125747",
-            "StackId": "arn:aws:cloudformation:us-east-1:100673254127:stack/amplify-adaptivewebapp-dev-125747/6eadd930-1113-11eb-896f-120022ae60fd",
-            "AmplifyAppId": "d3vldatbgavtmj"
-        },
-        "categories": {
-            "auth": {
-                "adaptivewebapp8563919c": {}
-            },
-            "hosting": {
-                "amplifyhosting": {
-                    "appId": "d3vldatbgavtmj",
-                    "type": "manual"
-                }
-            }
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-adaptivewebapp-dev-125747-authRole",
+      "UnauthRoleArn": "arn:aws:iam::100673254127:role/amplify-adaptivewebapp-dev-125747-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::100673254127:role/amplify-adaptivewebapp-dev-125747-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-adaptivewebapp-dev-125747-deployment",
+      "UnauthRoleName": "amplify-adaptivewebapp-dev-125747-unauthRole",
+      "StackName": "amplify-adaptivewebapp-dev-125747",
+      "StackId": "arn:aws:cloudformation:us-east-1:100673254127:stack/amplify-adaptivewebapp-dev-125747/6eadd930-1113-11eb-896f-120022ae60fd",
+      "AmplifyAppId": "d3vldatbgavtmj"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3vldatbgavtmj",
+          "type": "manual"
         }
+      },
+      "auth": {
+        "adaptivewebappd942d40f": {}
+      }
     }
+  }
 }

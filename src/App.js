@@ -182,6 +182,6 @@ class App extends Component {
     );
   }
 }
-export default withAuthenticator(App)
+export default withRouter(App)
 
 
